@@ -1,0 +1,17 @@
+<h1>Slacker News</h1>
+
+<ul class="list-unstyled list-group">
+  <% @links.each do |link| %>
+    <li class="list-group-item">
+      <%= link_to '<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>'.html_safe, link_path(link), id: link.id, method: "patch" %>
+
+      <a href="http://www.<%=link.url%>"><%= link.name %></a>
+      <%= link.upvotes %> point
+    </li>
+  <% end %>
+</ul>
+
+
+<p>
+  <%= link_to "Add link", new_link_path %>
+</p>
