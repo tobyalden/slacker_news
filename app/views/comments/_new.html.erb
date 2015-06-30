@@ -1,0 +1,9 @@
+<%= form_for [@link, @comment] do |f| %>
+  <div class="form-group">
+    <%= f.label :new_comment %>
+    <%= f.text_field :text, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary"%>
+  </div>
+<% end %>

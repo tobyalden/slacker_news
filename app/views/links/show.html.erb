@@ -1,0 +1,9 @@
+<h3><%= @link.name %></h3>
+
+<%= render :partial => '/comments/new'%>
+
+<ul class="list-unstyled list-group">
+  <% @link.comments.each do |comment| %>
+    <li class="list-group-item"><%=comment.text %></li>
+  <% end %>
+</ul>

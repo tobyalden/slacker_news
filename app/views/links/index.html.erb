@@ -6,7 +6,9 @@
       <%= link_to '<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>'.html_safe, link_path(link), id: link.id, method: "patch" %>
 
       <a href="http://www.<%=link.url%>"><%= link.name %></a>
-      <%= link.upvotes %> point
+      <p>
+      <%= link.upvotes %> point | <%= link_to "comments", link_path(link), id: "comments-#{link.id}" %> 
+      </p>
     </li>
   <% end %>
 </ul>

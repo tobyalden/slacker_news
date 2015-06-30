@@ -22,6 +22,11 @@ class LinksController < ApplicationController
     redirect_to links_path
   end
 
+  def show
+    @link = Link.find(params[:id])
+    @comment = Comment.new
+  end
+
   private
 
   def link_params

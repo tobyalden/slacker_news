@@ -2,6 +2,7 @@ class Link < ActiveRecord::Base
   before_save :strip_url
   validates :name, :presence => true
   validates :url, :presence => true
+  has_many :comments
 
   private
   def strip_url
