@@ -1,19 +1,24 @@
-<h1>Slacker News</h1>
+<div class="jumbotron">
+  <h1 class="text-center">SLACKER NEWS</h1>
+</div>
 
-<ul class="list-unstyled list-group">
-  <% @links.each do |link| %>
-    <li class="list-group-item">
-      <%= link_to '<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>'.html_safe, link_path(link), id: link.id, method: "patch" %>
+<div class="container">
+  <ul class="list-unstyled list-group">
+    <% @links.each do |link| %>
+      <li class="list-group-item">
+        <%= link_to '<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>'.html_safe, link_path(link), id: link.id, method: "patch" %>
 
-      <a href="http://www.<%=link.url%>"><%= link.name %></a>
-      <p>
-      <%= link.upvotes %> point | <%= link_to "comments", link_path(link), id: "comments-#{link.id}" %> 
-      </p>
-    </li>
-  <% end %>
-</ul>
+        <a href="http://www.<%=link.url%>"><%= link.name %></a>
+        <p>
+        <%= link.upvotes %> point | <%= link_to "comments", link_path(link), id: "comments-#{link.id}" %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
 
 
-<p>
-  <%= link_to "Add link", new_link_path %>
-</p>
+  <p>
+    <%= link_to "Add link", new_link_path, class: "btn btn-primary" %>
+  </p>
+
+</div>
